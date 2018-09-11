@@ -300,7 +300,6 @@ a:active, a:focus, a:hover {
   align-items: center;
   align-content: center;
 }
-
 .wrap-form-next > form #name,
 .wrap-form-next > form #phone {
   width: 300px;
@@ -355,6 +354,7 @@ a:active, a:focus, a:hover {
 }
 
 .submit {
+  display: block;
   margin: auto;
   width: 250px;
   background-color: #339dc8;
@@ -370,6 +370,20 @@ a:active, a:focus, a:hover {
   -o-transition: all 0.35s ease 0s;
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
+  overflow: hidden;
+  position: relative;
+}
+.submit:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
 }
 .submit:hover {
   background-color: #ffeb00;
@@ -586,13 +600,12 @@ a:active, a:focus, a:hover {
 }
 #owl-demo h1 {
   margin: 50px;
-  width: 90%;
+  width: 60%;
   display: block;
   font-size: 40.5px;
   font-weight: bolder;
-  color: #ffffff;
+  color: #525252;
   text-align: left;
-  text-shadow: 0 1px 1px #262626;
   z-index: 2;
 }
 #owl-demo img {
@@ -607,7 +620,6 @@ a:active, a:focus, a:hover {
 #owl-demo .submit {
   display: block;
   margin: 50px;
-  border-radius: 5px;
   z-index: 2;
 }
 

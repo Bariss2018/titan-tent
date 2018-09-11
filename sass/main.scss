@@ -334,6 +334,7 @@ a {
 }
 
 .submit {
+	display: block;
 	margin: auto;
 	width: 250px;
 	background-color: $price-color;
@@ -346,6 +347,20 @@ a {
 	cursor: pointer;
 	border-radius: 19px;
 	@include transition(all, 0.35s, ease, 0s);
+	overflow: hidden;
+	position: relative;
+	&:before {
+		content: "";
+		background-color: rgba(255, 255, 255, 0.5);
+		height: 100%;
+		width: 3em;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: -1.5em;
+		transform: skewX(-45deg) translateX(0);
+		transition: none;
+	}
 	&:hover {
 		background-color: $call-color;
 		color: $button-color;
@@ -560,13 +575,13 @@ a {
 	h1 {
 		margin: 50px; //		position: absolute;
 		//		top: 30%;
-		width: 90%;
+		width: 60%;
 		display: block;
 		font-size: $font-size * 2.7;
 		font-weight: bolder;
-		color: $accent-color;
+		color: $hover-color;
 		text-align: left;
-		text-shadow: 0 1px 1px #262626;
+//		text-shadow: 0 1px 1px #ffffff;
 		z-index: 2;
 	}
 	img {
@@ -582,7 +597,7 @@ a {
 		display: block;
 		margin: 50px; //		position: absolute;
 		//		top: 65%;
-		border-radius: 5px;
+//		border-radius: 5px;
 		z-index: 2;
 	}
 }
