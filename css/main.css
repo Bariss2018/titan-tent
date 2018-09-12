@@ -357,7 +357,7 @@ a:active, a:focus, a:hover {
   display: block;
   margin: auto;
   width: 250px;
-  background-color: #339dc8;
+  background-color: #1e5c76;
   color: #fff;
   border: none;
   outline: none;
@@ -373,21 +373,27 @@ a:active, a:focus, a:hover {
   overflow: hidden;
   position: relative;
 }
-.submit:before {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 100%;
-  width: 3em;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -1.5em;
-  transform: skewX(-45deg) translateX(0);
-  transition: none;
-}
 .submit:hover {
-  background-color: #ffeb00;
-  color: #303030;
+  background-color: #339dc8;
+}
+.submit:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 300px;
+  margin-left: 60px;
+  background: #fff;
+  position: absolute;
+  opacity: 0.6;
+  left: -90px;
+  top: -150px;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-animation: glare 6s 0.05s ease-in-out infinite;
+  animation: glare 6s 0.05s ease-in-out infinite;
 }
 
 .submit-call {
@@ -401,15 +407,36 @@ a:active, a:focus, a:hover {
   font-size: 13.5px;
   font-weight: bold;
   cursor: pointer;
+  overflow: hidden;
   border-radius: 17px;
   -moz-transition: all 0.35s ease 0s;
   -o-transition: all 0.35s ease 0s;
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
+  position: relative;
 }
 .submit-call:hover {
   background-color: #339dc8;
   color: #ffffff;
+}
+.submit-call:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 300px;
+  margin-left: 60px;
+  background: #fff;
+  position: absolute;
+  opacity: 0.6;
+  left: -90px;
+  top: -150px;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-animation: glare 6s 0.05s ease-in-out infinite;
+  animation: glare 6s 0.05s ease-in-out infinite;
 }
 
 .main-form-agreement {
@@ -823,6 +850,20 @@ a:active, a:focus, a:hover {
   display: none;
 }
 
+@-webkit-keyframes glare {
+  0% {
+    left: -30px;
+    margin-left: 0px;
+  }
+  15% {
+    left: 110%;
+    margin-left: 80px;
+  }
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
+}
 /*calculator CSS start*/
 .input-calc,
 .input-calc-2 {
