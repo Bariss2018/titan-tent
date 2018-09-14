@@ -201,10 +201,9 @@ a {
 }
 
 .line {
-	width: 100%;
-	background-color: $line-color;
-	height: 1px;
-	margin: auto;
+	height: 4px;
+	border: 1px dashed $price-color;
+	background-color: #fdfd90;
 }
 
 .container {
@@ -214,9 +213,29 @@ a {
 }
 
 .container-youtube {
-	max-width: 560px;
+	max-width: 1200px;
 	width: 95%;
 	margin: 20px auto 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: center;
+}
+.youtube {
+	width: 560px;
+	height: 300px;
+	margin: 10px;
+	position: relative;
+//	padding-bottom: 56.25%;
+}
+
+.youtube iframe {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .container-form {
@@ -330,13 +349,16 @@ a {
 		color: #fff;
 		cursor: pointer;
 	}
+	input {
+		display: block;
+	}
 }
 
 .submit {
 	display: block;
 	margin: auto;
 	width: 250px;
-	background-color: #1e5c76;
+	background-color: $price-color;
 	color: #fff;
 	border: none;
 	outline: none;
@@ -344,12 +366,11 @@ a {
 	font-size: $font-size * 0.9;
 	font-weight: bold;
 	cursor: pointer;
-	border-radius: 19px;
 	@include transition(all, 0.35s, ease, 0s);
 	overflow: hidden;
 	position: relative;
 	&:hover {
-		background-color: $price-color ;
+		background-color: #1e5c76 ;
 	}
 	&:after {
 		content: "";
@@ -386,29 +407,9 @@ a {
 	overflow: hidden;
 	border-radius: 17px;
 	@include transition(all, 0.35s, ease, 0s);
-	position: relative;
 	&:hover {
 		background-color: $price-color;
 		color: $accent-color;
-	}
-	&:after {
-		content: "";
-		display: block;
-		width: 20px;
-		height: 300px;
-		margin-left: 60px;
-		background: #fff;
-		position: absolute;
-		opacity: 0.6;
-		left: -90px;
-		top: -150px;
-		z-index: 1;
-		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
-		-webkit-transition: all 1s;
-		transition: all 1s;
-		-webkit-animation: glare 6s 0.05s ease-in-out infinite;
-		animation: glare 6s 0.05s ease-in-out infinite;
 	}
 }
 
@@ -788,20 +789,6 @@ a {
 
 .offer p {
 	font: 400 0.9em 'Roboto', 'Tahoma', sans-serif;
-}
-
-.youtube {
-	height: 0;
-	position: relative;
-	padding-bottom: 56.25%;
-}
-
-.youtube iframe {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
 }
 
 .sh_nmr,

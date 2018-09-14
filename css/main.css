@@ -221,10 +221,9 @@ a:active, a:focus, a:hover {
 }
 
 .line {
-  width: 100%;
-  background-color: #000000;
-  height: 1px;
-  margin: auto;
+  height: 4px;
+  border: 1px dashed #339dc8;
+  background-color: #fdfd90;
 }
 
 .container {
@@ -234,9 +233,29 @@ a:active, a:focus, a:hover {
 }
 
 .container-youtube {
-  max-width: 560px;
+  max-width: 1200px;
   width: 95%;
   margin: 20px auto 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: center;
+}
+
+.youtube {
+  width: 560px;
+  height: 300px;
+  margin: 10px;
+  position: relative;
+}
+
+.youtube iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .container-form {
@@ -352,12 +371,15 @@ a:active, a:focus, a:hover {
   color: #fff;
   cursor: pointer;
 }
+.form-item input {
+  display: block;
+}
 
 .submit {
   display: block;
   margin: auto;
   width: 250px;
-  background-color: #1e5c76;
+  background-color: #339dc8;
   color: #fff;
   border: none;
   outline: none;
@@ -365,7 +387,6 @@ a:active, a:focus, a:hover {
   font-size: 13.5px;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 19px;
   -moz-transition: all 0.35s ease 0s;
   -o-transition: all 0.35s ease 0s;
   -webkit-transition: all 0.35s ease 0s;
@@ -374,7 +395,7 @@ a:active, a:focus, a:hover {
   position: relative;
 }
 .submit:hover {
-  background-color: #339dc8;
+  background-color: #1e5c76;
 }
 .submit:after {
   content: "";
@@ -413,30 +434,10 @@ a:active, a:focus, a:hover {
   -o-transition: all 0.35s ease 0s;
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
-  position: relative;
 }
 .submit-call:hover {
   background-color: #339dc8;
   color: #ffffff;
-}
-.submit-call:after {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 300px;
-  margin-left: 60px;
-  background: #fff;
-  position: absolute;
-  opacity: 0.6;
-  left: -90px;
-  top: -150px;
-  z-index: 1;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  -webkit-animation: glare 6s 0.05s ease-in-out infinite;
-  animation: glare 6s 0.05s ease-in-out infinite;
 }
 
 .main-form-agreement {
@@ -815,20 +816,6 @@ a:active, a:focus, a:hover {
 
 .offer p {
   font: 400 0.9em 'Roboto', 'Tahoma', sans-serif;
-}
-
-.youtube {
-  height: 0;
-  position: relative;
-  padding-bottom: 56.25%;
-}
-
-.youtube iframe {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .sh_nmr,
