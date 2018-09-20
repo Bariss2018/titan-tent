@@ -44,7 +44,7 @@ $(document).ready(function (e) {
 		loop: true,
 		autoWidth: true,
 		navigation: true,
-		navigationText: ['<i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>', '<i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>'],
+		navigationText: ['<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>'],
 		rewindNav: true,
 		pagination: true,
 		rewindSpeed: 100
@@ -56,7 +56,7 @@ $(document).ready(function (e) {
 		itemsDesktopSmall: [979, 2],
 		loop: true,
 		navigation: true,
-		navigationText: ['<i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>', '<i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>'],
+		navigationText: ['<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>'],
 		rewindNav: true,
 		pagination: true,
 		rewindSpeed: 100
