@@ -65,46 +65,6 @@ $(document).ready(function (e) {
 			console.log($tkan);
 		});
 	});
-	$('.input-number').focusin(function () {
-		$('#long').animate({
-			'opacity': 'show'
-		}, 300);
-		$('#car').animate({
-			'opacity': '0.3'
-		}, 300);
-	});
-	$('.input-number-2').focusin(function () {
-		$('#width').animate({
-			'opacity': 'show'
-		}, 300);
-		$('#car').animate({
-			'opacity': '0.3'
-		}, 300);
-	});
-	$('.input-number-3').on('click', function () {
-		if ($(this).is(':checked')) {
-			$('#truba').animate({
-				'opacity': 'show'
-			}, 300);
-			$('#car').animate({
-				'opacity': '0.3'
-			}, 300);
-		} else {
-			$('#truba').hide();
-		};
-	});
-	$('.input-number-4').on('click', function () {
-		if ($(this).is(':checked')) {
-			$('#treshetki').animate({
-				'opacity': 'show'
-			}, 300);
-			$('#car').animate({
-				'opacity': '0.3'
-			}, 300);
-		} else {
-			$('#treshetki').hide();
-		};
-	});
 	$('.openButton, .close, #calc_buttom').click(function () {
 		if (!$('.openButton').hasClass('openDone')) {
 			$('.openButton').addClass('openDone');

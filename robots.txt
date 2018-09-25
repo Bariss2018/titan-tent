@@ -1,4 +1,4 @@
 User-agent: *
 Crawl-delay: 1
-Host: http://titan-kuzov.ru/
-Sitemap: http://titan-kuzov.ru/sitemap.xml
+Host: http://titan-tent.ru/
+Sitemap: http://titan-tent.ru/sitemap.xml
