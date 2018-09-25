@@ -1,18 +1,22 @@
 @media only screen and (max-width: 1024px) {
-	.top-phone {
-		font-size: 10px;
+	.top-logo {
+		width: 150px;
 	}
-	.top-menu {
-		font-size: 10px;
+	.top-phone {
+		font-size: 12px;
+	}
+	.sh_nmr {
+		font-size: 12px;
+	}
+	.submit-call {
+		width: 150px;
+	}
+	.top-menu > ul > li > a {
+		font-size: 6px;
 	}
 	.logo-title {
 		font-size: 9px;
 	}
-/*
-	.what-is-it-img > img{
-		height: 280px;
-	}
-*/
 	.what-is-it-desc > p {
 		font-size: 13px;
 		margin: 15px;
@@ -69,17 +73,21 @@
 		height: auto;
 	}
 }
-
-
 @media only screen and (max-width: 768px) {
 	.top-menu {
 		display: none;
+	}
+	.container-form {
+		background-size: cover;
+	}
+	.top-logo {
+		width: 120px;
 	}
 	.btn-menu {
 		display: block;
 	}
 	.top-phone {
-		flex: 0 1 180px;
+		margin-right: 80px;
 	}
 	.wrap-form-next > form {
         -webkit-flex-flow: column nowrap;
@@ -93,6 +101,10 @@
     	font-size: 28px;
 		font-weight: normal;
 		background-color: rgba(19, 151, 182, 0.9);
+	}
+	.youtube > iframe {
+		width: 100%;
+		height: 100%;
 	}
 	.main-img {
 		height: 350px;
@@ -183,14 +195,28 @@
 		flex-flow: column nowrap;
 		align-items: center;
 	}
+	#pulse {
+		left: 10%;
+	}
+	.item-car > img {
+		left: inherit;
+	}
+	#long,
+	#width,
+	#truba,
+	#treshetki,
+	#car {
+		width: 205px;
+		height: auto;
+	}
 }
 
 @media only screen and (max-width: 480px) {
+	.site-header {
+		height: 80px;
+	}
 	.top-phone {
 		display: none;
-	}
-	.top-logo {
-		flex: 0 1 90%;
 	}
 	.logo-title {
 		text-align: center;
@@ -204,6 +230,9 @@
 	}
 	.main-img {
 		height: auto;
+	}
+	.btn-menu {
+		height: 80px;
 	}
 	.wrap-form-next > form {
 		width: auto;
@@ -284,11 +313,17 @@
 	}
 	#owl-demo .item {
 		height: 150px;
+		margin: 0;
 	}
 	#owl-demo .submit {
 		display: none;
 	}
 	.main-form-title {
 		font-size: 18px;
+	}
+	#pulse {
+		font-size: 8px;
+		width: 60px;
+		height: 60px;
 	}
 }

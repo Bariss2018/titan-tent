@@ -1,0 +1,253 @@
+$main-font: "Open Sans", sans-serif;
+$main-color: #333;
+$line-color: #000000;
+$accent-color: #ffffff;
+$hover-color: #525252;
+$price-color: #339dc8;
+$button-color: #303030;
+$call-color: #ffeb00;
+$hover-button: #f4754c;
+$hover-button-call: #0d63c7;
+$font-size: 15px;
+
+@mixin box-shadow($x, $y, $blur, $color) {
+	-moz-box-shadow: $x $y $blur $color;
+	-webkit-box-shadow: $x $y $blur $color;
+	box-shadow: $x $y $blur $color;
+}
+
+@mixin transition($property, $duration, $timing, $delay) {
+	-moz-transition: $property $duration $timing $delay;
+	-o-transition: $property $duration $timing $delay;
+	-webkit-transition: $property $duration $timing $delay;
+	transition: $property $duration $timing $delay;
+}
+
+@mixin border-radius($radius) {
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+.input-calc,
+.input-calc-2 {
+	display: block;
+	margin: 5px 20px;
+	padding: 5px;
+	width: 200px;
+}
+
+.input-number,
+.input-number-2 {
+	color: #f53d3d;
+	width: 50px;
+	outline: none;
+	border: solid 1px #009e40;
+	border-radius: 3px;
+	text-align: center;
+	font-size: $font-size * 1.2;
+	font-weight: bold;
+}
+
+#select_calc {
+	color: #339dc8;
+	outline: none;
+	border: solid 1px #009e40;
+	border-radius: 3px;
+	text-align: center;
+	font-size: $font-size;
+	font-weight: bold;
+}
+
+.submit-calc {
+	margin: 5px 20px;
+	padding: 5px;
+}
+
+.submit_zakaz {
+	width: 150px;
+	background-color: $price-color;
+	color: #fff;
+	border: none;
+	outline: none;
+	padding: 10px 15px;
+	font-size: $font-size * 0.9;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 19px;
+	@include transition(all, 0.35s, ease, 0s);
+	&:hover {
+		background-color: $call-color;
+		color: $button-color;
+	}
+}
+
+.input-calc-3,
+.input-calc-4 {
+	margin: 5px 20px;
+	padding: 5px;
+	width: 200px;
+}
+
+.label-select-calc {
+	display: block;
+}
+
+.label-input-number,
+.label-input-number-2,
+.label-input-number-3,
+.label-input-number-4 {
+	display: inline;
+}
+
+.section-calc {
+	display: block;
+	margin: 5px 20px;
+	padding: 5px;
+	width: 200px;
+}
+
+.itog-calc {
+	margin: 20px;
+	padding: 5px;
+	width: 200px;
+	font-size: $font-size * 1.5;
+	color: #009e40;
+	#itog {
+		color: #f21c1c;
+		font-weight: bold;
+	}
+}
+
+.calc-buttom {
+	text-align: center;
+}
+
+.calc {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	position: fixed;
+	font-size: $font-size * 0.9;
+	left: -999px;
+	top: 21%;
+	background-color: #efefef;
+	border-right: solid 1px silver;
+	background-color: #efefef;
+	transition: 0.5s ease;
+	border: solid 3px #f21c1c;
+	box-shadow: inset 1px 1px 5px #cecece, 1px 1px 3px #bfbfbf;
+	border-radius: 0px 15px 15px 0px;
+	-moz-border-radius: 0px 10px 10px 0px;
+	-webkit-border-radius: 0px 10px 10px 0px;
+	@include box-shadow(0, 1px, 5px, #555);
+	.item-calc {
+		border-radius: 0px 15px 15px 0px;
+		-moz-border-radius: 0px 10px 10px 0px;
+		-webkit-border-radius: 0px 10px 10px 0px;
+		background-color: #efefef;
+		border-right: solid 1px silver;
+	}
+}
+.close {
+	display: block;
+	height: 20px;
+	margin: 0 6px;
+	color: #f21c1c;
+	font-size: 25px;
+	right: 0;
+	top: 0;
+	position: absolute;
+	cursor: pointer;
+}
+.test {
+	display: block;
+	height: 1000px;
+}
+#pulse {
+	position: fixed;
+	top: 90%;
+	left: 5%;
+	transform: translate(-50%, -50%);
+	background: #f21c1c;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	color: #fff;
+	text-align: center;
+	font-size: 15px;
+	border: solid;
+	border-width: 2px;
+	border-color: #f21c1c;
+	right: 20px;
+	outline: none;
+	cursor: pointer;
+	margin: 15px 20px;
+	font-weight: bold;
+	transition: 0.2s;
+	@include box-shadow(0, 1px, 5px, #555);
+}
+
+#pulse:before,
+#pulse:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	border: 1px solid #f21c1c;
+	left: -20px;
+	right: -20px;
+	top: -20px;
+	bottom: -20px;
+	border-radius: 50%;
+	animation: animate 1.5s linear infinite;
+	opacity: 0;
+	backface-visibility: hidden;
+}
+
+#pulse:after {
+	animation-delay: .5s;
+}
+
+#pulse:hover {
+	transition: 0.2s;
+	opacity: 0.8;
+}
+
+#pulse:active {
+	transition: 0.2s;
+	opacity: 0.4;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.blur {
+	display: none;
+	background-color: rgba(43, 46, 56, 0.6);
+	position: fixed;
+	top: -15px;
+	right: -15px;
+	bottom: -15px;
+	left: -15px;
+}
+
+@keyframes animate {
+	0% {
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+}

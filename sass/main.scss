@@ -24,7 +24,6 @@ $font-size: 15px;
 	-webkit-transition: $property $duration $timing $delay;
 	transition: $property $duration $timing $delay;
 }
-
 @mixin border-radius($radius) {
 	-moz-border-radius: $radius;
 	-ms-border-radius: $radius;
@@ -42,11 +41,10 @@ body {
 	font-family: $main-font;
 	margin: 0;
 	padding: 0;
-	line-height: 1.5; //	filter: blur(5px);
+	line-height: 1.5;
 }
 
 .wrap-site {
-	//    background-color: #fff;
 	background: url(../img/bg/bg-3.png) repeat-y scroll top right;
 	-moz-background-size: 20%;
 	-o-background-size: 20%;
@@ -75,22 +73,11 @@ a {
 		outline: 0;
 	}
 }
-
-.logo-title {
-	color: $price-color;
-	font-size: $font-size * 0.8;
-	font-style: italic;
-	font-weight: bold;
-	padding: 0 10px 5px 10px;
-}
-
 .site-header {
 	background: url(../img/bg/bakcgraund_fon_4.png) repeat-x scroll top center;
-	filter: alpha(Opacity=90);
-	/* Прозрачность в IE */
+	filter: alpha(Opacity=90); /* Прозрачность в IE */
 	margin: 0;
 	padding: 0;
-	max-width: 100%;
 	width: 100%;
 	height: 100px;
 	position: fixed;
@@ -98,23 +85,52 @@ a {
 	z-index: 100;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	align-content: stretch;
 }
-
+.top-logo {
+	margin-left: 20px;
+	text-align: center;
+	align-self: flex-start;
+	@include box-shadow(0, 2px, 5px, #555);
+	border-radius: 0 0 10px 10px;
+	border: 2px dashed $price-color;
+	border-top: none;
+	background: #fefefe;
+	background: -moz-linear-gradient(top, #fefefe 0%, #dbdbdb 78%, #d1d1d1 78%, #e2e2e2 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #fefefe), color-stop(78%, #dbdbdb), color-stop(78%, #d1d1d1), color-stop(100%, #e2e2e2));
+	background: -webkit-linear-gradient(top, #fefefe 0%, #dbdbdb 78%, #d1d1d1 78%, #e2e2e2 100%);
+	background: -o-linear-gradient(top, #fefefe 0%, #dbdbdb 78%, #d1d1d1 78%, #e2e2e2 100%);
+	background: -ms-linear-gradient(top, #fefefe 0%, #dbdbdb 78%, #d1d1d1 78%, #e2e2e2 100%);
+	background: linear-gradient(to bottom, #fefefe 0%, #dbdbdb 78%, #d1d1d1 78%, #e2e2e2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e2e2e2', GradientType=0);
+	img {
+		width: 90%;
+		padding: 5px;
+	}
+}
+.logo-title {
+		color: $price-color;
+		font-size: $font-size * 0.8;
+		font-style: italic;
+		font-weight: bold;
+		padding: 5px;
+	}
 .top-menu {
+	font-size: $font-size * 0.6;
 	ul {
-		margin: 0;
-		padding: 0;
+		margin-left: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 		li {
-			display: inline-block;
+			display: block;
 			a {
-
 				display: inline-block;
 				border-left: 1px solid;
-				margin: 0 10px;
 				padding: 0 10px;
+
 				text-transform: uppercase;
 				color: $accent-color;
 				@include transition(all, 0.35s, ease, 0s);
@@ -123,15 +139,55 @@ a {
 					font-weight: bold;
 				}
 			}
+			i {
+				margin-bottom: 5px;
+				display: block;
+				font-size: $font-size * 2;
+			}
 		}
 	}
 }
 
 .top-phone {
 	color: $accent-color;
-	font-size: $font-size;
-}
+	font-size: $font-size * 1.4;
+	margin-right: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
+	.phone-button {
+		padding: 5px;
+		text-align: center;
+		order: 1;
+	}
+	.phone-number {
+		padding: 3px;
+		text-align: center;
+		border-bottom: 1px dashed #fff;
+	}
+}
+.btn-menu {
+	display: none;
+	text-align: center;
+	width: 80px;
+	height: 100px;
+	line-height: 100px;
+	background-color: rgba(255, 255, 255, 0);
+	color: $accent-color;
+	cursor: pointer;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 102;
+	font-size: $font-size * 2.8;
+	@include transition(all, 0.35s, ease, 0s);
+	&:hover {
+		color: $call-color;
+		font-weight: bold;
+
+	}
+}
 .hidden-menu {
 	display: none;
 	background-color: rgba(0, 0, 0, 0.9);
@@ -176,29 +232,6 @@ a {
 	top: 0;
 	left: 0;
 }
-
-.btn-menu {
-	display: none;
-	text-align: center;
-	width: 80px;
-	height: 80px;
-	line-height: 80px;
-	background-color: rgba(255, 255, 255, 0);
-	color: $accent-color;
-	cursor: pointer;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 102;
-	font-size: $font-size * 2;
-	@include transition(all, 0.35s, ease, 0s);
-	&:hover {
-		color: $hover-button;
-		font-weight: bold;
-
-	}
-}
-
 .line {
 	height: 4px;
 	border: 1px dashed $price-color;
@@ -221,7 +254,6 @@ a {
 	margin: 0px;
 	padding: 0px;
 	display: flex;
-	text-align: inherit;
 	flex-wrap: wrap;
 	place-content: stretch center;
 	align-items: stretch;
@@ -244,7 +276,7 @@ a {
 
 .container-form {
 	padding: 20px;
-	background: url(../img/bg/triangle-5.png) repeat scroll center center;
+	background: url(../img/bg/triangle-5.png) repeat-x;
 	-moz-background-size: contain;
 	-o-background-size: contain;
 	-webkit-background-size: contain;
@@ -287,11 +319,15 @@ a {
 }
 
 .main-button-title {
-	color: $hover-button;
+	color: $hover-button-call;
 	font-size: $font-size * 1.2;
 	font-weight: bold;
 	margin: 30px 30px 10px 30px;
 	text-align: center;
+	span {
+		color: #ff0000;
+		font-size: $font-size * 1.8;
+	}
 }
 
 .wrap-form-next > form {
@@ -759,15 +795,6 @@ a {
 		@include border-radius(50%);
 	}
 }
-
-.top-logo {
-	background-color: #fff;
-	text-align: center;
-	align-self: flex-start;
-	@include box-shadow(0, 2px, 5px, #555);
-	border-radius: 0 0 10px 10px;
-}
-
 .top-logo-thank-you {
 	img {
 		display: block;
@@ -802,22 +829,18 @@ a {
 	font: 400 0.9em 'Roboto', 'Tahoma', sans-serif;
 }
 
-.sh_nmr,
-.sh_nmr_01,
-.sh_nmr_02 {
+.sh_nmr {
 	margin: 0 0 0 1px;
 	padding: 0px 4px;
 	color: $accent-color;
-	font-size: $font-size * 0.8;
+	font-size: $font-size * 1.05;
 	font-weight: bold;
 	cursor: pointer;
 	background-color: $hover-button;
 	border-radius: 2px;
 }
 
-.num_hide,
-.num_hide_01,
-.num_hide_02 {
+.num_hide {
 	display: none;
 }
 
@@ -837,249 +860,5 @@ a {
 }
 
 /*calculator CSS start*/
-
-.input-calc,
-.input-calc-2 {
-	display: block;
-	margin: 5px 20px;
-	padding: 5px;
-	width: 200px;
-}
-
-.input-number,
-.input-number-2 {
-	color: #f53d3d;
-	width: 50px;
-	outline: none;
-	border: solid 1px #009e40;
-	border-radius: 3px;
-	text-align: center;
-	font-size: $font-size * 1.2;
-	font-weight: bold;
-}
-
-#select_calc {
-	color: #339dc8;
-	outline: none;
-	border: solid 1px #009e40;
-	border-radius: 3px;
-	text-align: center;
-	font-size: $font-size;
-	font-weight: bold;
-}
-
-.submit-calc {
-	margin: 5px 20px;
-	padding: 5px;
-}
-
-.submit_zakaz {
-	width: 150px;
-	background-color: $price-color;
-	color: #fff;
-	border: none;
-	outline: none;
-	padding: 10px 15px;
-	font-size: $font-size * 0.9;
-	font-weight: bold;
-	cursor: pointer;
-	border-radius: 19px;
-	@include transition(all, 0.35s, ease, 0s);
-	&:hover {
-		background-color: $call-color;
-		color: $button-color;
-	}
-}
-
-.input-calc-3,
-.input-calc-4 {
-	margin: 5px 20px;
-	padding: 5px;
-	width: 200px;
-}
-
-.label-select-calc {
-	display: block;
-}
-
-.label-input-number,
-.label-input-number-2,
-.label-input-number-3,
-.label-input-number-4 {
-	display: inline;
-}
-
-.section-calc {
-	display: block;
-	margin: 5px 20px;
-	padding: 5px;
-	width: 200px;
-}
-
-.itog-calc {
-	margin: 20px;
-	padding: 5px;
-	width: 200px;
-	font-size: $font-size * 1.5;
-	color: #009e40;
-	#itog {
-		color: #f21c1c;
-		font-weight: bold;
-	}
-}
-
-.calc-buttom {
-	text-align: center;
-}
-
-.calc {
-	display: flex;
-	flex-direction: row;
-	position: fixed;
-	font-size: $font-size * 0.9;
-	left: -999px;
-	top: 30%;
-	background-color: #efefef;
-	transition: 0.5s ease;
-	border: solid 3px #f21c1c;
-	box-shadow: inset 1px 1px 5px #cecece, 1px 1px 3px #bfbfbf;
-	border-radius: 0px 15px 15px 0px;
-	@include box-shadow(0, 1px, 5px, #555);
-}
-
-.item-calc {
-	background-color: #efefef;
-	border-right: solid 1px silver;
-}
-
-.item-car {
-	display: block;
-	background-color: #efefef;
-	width: 510px;
-	height: 305px;
-	-moz-border-radius: 0px 10px 10px 0px;
-	-webkit-border-radius: 0px 10px 10px 0px;
-	img {
-		position: absolute;
-		max-height: 305px;
-		left: 280px;
-	}
-}
-
-#long,
-#width,
-#truba,
-#treshetki {
-	display: none;
-	height: 305px;
-}
-
-#car {
-	height: 305px;
-}
-
-.close {
-	display: block;
-	height: 20px;
-	margin: 0 6px;
-	color: #f21c1c;
-	font-size: 25px;
-	right: 0;
-	top: 0;
-	position: absolute;
-	cursor: pointer;
-}
-
-.test {
-	display: block;
-	height: 1000px;
-}
-
-#pulse {
-	position: fixed;
-	top: 90%;
-	left: 5%;
-	transform: translate(-50%, -50%);
-	background: #f21c1c;
-	border-radius: 50%;
-	width: 100px;
-	height: 100px;
-	color: #fff;
-	text-align: center;
-	font-size: 15px;
-	border: solid;
-	border-width: 2px;
-	border-color: #f21c1c;
-	right: 20px;
-	outline: none;
-	cursor: pointer;
-	margin: 15px 20px;
-	font-weight: bold;
-	transition: 0.2s;
-	@include box-shadow(0, 1px, 5px, #555);
-}
-
-#pulse:before,
-#pulse:after {
-	content: " ";
-	display: block;
-	position: absolute;
-	border: 1px solid #f21c1c;
-	left: -20px;
-	right: -20px;
-	top: -20px;
-	bottom: -20px;
-	border-radius: 50%;
-	animation: animate 1.5s linear infinite;
-	opacity: 0;
-	backface-visibility: hidden;
-}
-
-#pulse:after {
-	animation-delay: .5s;
-}
-
-#pulse:hover {
-	transition: 0.2s;
-	opacity: 0.8;
-}
-
-#pulse:active {
-	transition: 0.2s;
-	opacity: 0.4;
-}
-
-input[type='number'] {
-	-moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-}
-
-.blur {
-	display: none;
-	background-color: rgba(43, 46, 56, 0.6);
-	position: fixed;
-	top: -15px;
-	right: -15px;
-	bottom: -15px;
-	left: -15px;
-}
-
-@keyframes animate {
-	0% {
-		transform: scale(0.5);
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		transform: scale(1.2);
-		opacity: 0;
-	}
-}
-
+@import "calculator";
 /*calculator CSS end*/

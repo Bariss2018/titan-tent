@@ -7,22 +7,6 @@ $(document).ready(function (e) {
 			$('.num_hide').hide();
 		}
 	});
-	$('.sh_nmr_01').click(function () {
-		if ($('.num_hide_01').is(':hidden')) {
-			$('.num_hide_01').show();
-			$('.sh_nmr_01').hide();
-		} else {
-			$('.num_hide_01').hide();
-		}
-	});
-	$('.sh_nmr_02').click(function () {
-		if ($('.num_hide_02').is(':hidden')) {
-			$('.num_hide_02').show();
-			$('.sh_nmr_02').hide();
-		} else {
-			$('.num_hide_02').hide();
-		}
-	});
 	$('.btn-menu, .hidden-menu ul a').click(function () {
 		if ($('.hidden-menu').is(':hidden')) {
 			$('.hidden-menu').show();
